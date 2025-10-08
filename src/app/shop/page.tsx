@@ -1,4 +1,5 @@
 
+
 "use client"
 
 import React, { useState, useEffect } from 'react';
@@ -11,6 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ReviewStars from '@/components/products/review-stars';
 import ProductCard from '@/components/products/product-card';
+import { useToast } from '@/hooks/use-toast';
 
 const ShopPage = () => {
   const [currentPage, setCurrentPage] = useState('home'); // 'home' or 'product'
@@ -24,7 +26,7 @@ const ShopPage = () => {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [recommendedProducts, setRecommendedProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState<(Product & { quantity: number })[]>([]);
+  const { toast } = useToast();
 
   // Initialize data
   useEffect(() => {
@@ -125,21 +127,10 @@ const ShopPage = () => {
   };
 
   const addToCart = (product: Product) => {
-    const existingItem = cart.find(item => item.id === product.id);
-    let updatedCart;
-    
-    if (existingItem) {
-      updatedCart = cart.map(item =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      );
-    } else {
-      updatedCart = [...cart, { ...product, quantity: 1 }];
-    }
-    
-    setCart(updatedCart);
-    alert(`${product.name} added to cart!`);
+    toast({
+        title: "Coming Soon!",
+        description: `${product.title} will be added to your cart soon.`,
+    });
   };
 
   const clearFilter = () => {
@@ -260,7 +251,7 @@ const ShopPage = () => {
                   ))}
                </div>
 
-              <h1 className="text-4xl font-bold text-foreground mb-4">{selectedProduct.name}</h1>
+              <h1 className="text-4xl font-bold text-foreground mb-4">{selectedProduct.title}</h1>
               
               <div className="flex items-center mb-6">
                 <ReviewStars rating={selectedProduct.rating} />
