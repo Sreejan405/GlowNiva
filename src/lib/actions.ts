@@ -1,19 +1,18 @@
-"use server";
+'use server';
 
-import { getPersonalizedRecommendations } from "@/ai/flows/ai-product-recommendation";
+import { getPersonalizedRecommendations, AIProductRecommendationOutput } from "@/ai/flows/ai-product-recommendation";
 import { z } from "zod";
 import { products } from "./data";
+import { Product } from "./types";
 
 const recommendationSchema = z.object({
   skinType: z.string().min(1, "Please select your skin type."),
-  preferences: z.string().min(3, "Please describe your preferences."),
+  preferences: z.string().min(1, "Please select your main concern."),
 });
 
 type State = {
   message?: string | null;
-  recommendation?: string | null;
-  reason?: string | null;
-  product?: any | null;
+  recommendation?: AIProductRecommendationOutput | null;
   errors?: {
     skinType?: string[];
     preferences?: string[];
@@ -38,32 +37,25 @@ export async function getAiRecommendation(
 
   const { skinType, preferences } = validatedFields.data;
 
-  // For this demo, we'll create a simple review summary from our mock data.
-  // In a real app, this could be a more complex aggregation.
-  const reviewSummary = products
-    .slice(0, 5)
-    .map(p => 
-      `Product: ${p.title}. Reviews: ${p.reviews.map(r => r.body).join(' ')}`
-    )
-    .join('\n');
+  // Provide the AI with a simplified list of available products.
+  const availableProducts = products.map(p => ({
+    title: p.title,
+    description: p.description,
+    skinTypes: p.skinTypes,
+    tags: p.tags,
+    benefits: p.benefits,
+  }));
 
   try {
     const result = await getPersonalizedRecommendations({
       skinType,
       preferences,
-      reviewSummary,
+      availableProducts,
     });
     
-    // Try to find the recommended product in our mock data
-    const recommendedProduct = products.find(p => 
-      result.recommendation.toLowerCase().includes(p.title.toLowerCase())
-    );
-
     return {
       message: "Success!",
-      recommendation: result.recommendation,
-      reason: result.reason,
-      product: recommendedProduct || null,
+      recommendation: result,
     };
   } catch (error) {
     console.error("AI recommendation error:", error);
