@@ -7,6 +7,7 @@ import { Menu, X, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/logo";
 import { useToast } from "@/hooks/use-toast";
+import { ModeToggle } from "../mode-toggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -27,7 +28,7 @@ export default function Header() {
   }
 
   return (
-    <header className="shadow-md bg-gradient-to-r from-white via-[#fef9f6] to-[#fdf6f0] w-full">
+    <header className="shadow-md bg-gradient-to-r from-white via-[#fef9f6] to-[#fdf6f0] w-full dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       <div className="flex justify-start items-center py-4 px-4 md:px-8 w-full">
         <div className="flex-shrink-0">
             <Logo />
@@ -47,7 +48,8 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="hidden md:flex items-center ml-6">
+            <div className="hidden md:flex items-center ml-6 gap-2">
+                <ModeToggle />
                 <Button onClick={handleCartClick} variant="ghost" size="icon">
                     <ShoppingCart className="h-6 w-6" />
                     <span className="sr-only">Shopping Cart</span>
@@ -85,10 +87,13 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-             <Button onClick={handleCartClick} variant="ghost" size="icon" className="mt-4">
-                <ShoppingCart className="h-8 w-8" />
-                <span className="sr-only">Shopping Cart</span>
-            </Button>
+             <div className="flex items-center gap-4 mt-4">
+                <ModeToggle />
+                <Button onClick={handleCartClick} variant="ghost" size="icon">
+                    <ShoppingCart className="h-8 w-8" />
+                    <span className="sr-only">Shopping Cart</span>
+                </Button>
+            </div>
           </nav>
         </div>
       )}
