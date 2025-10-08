@@ -1,0 +1,58 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-new",
+      "description": "A smiling woman with clear, glowing skin holding a GlowNiva cosmetics box.",
+      "imageUrl": "https://storage.googleapis.com/aifirebase-7d0b3.appspot.com/user_images/glowniva_front.png",
+      "imageHint": "skincare model product"
+    },
+    {
+      "id": "about-us-hero",
+      "description": "Flat lay of natural skincare ingredients like avocado, honey, and flowers.",
+      "imageUrl": "https://images.unsplash.com/photo-1593560704563-efff44c86377?q=80&w=1000&h=600&fit=crop",
+      "imageHint": "natural ingredients"
+    },
+    {
+      "id": "product-1",
+      "description": "A stylish bottle of Rosewater Hydration Mask on a minimal background.",
+      "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&q=80",
+      "imageHint": "skincare product"
+    },
+    {
+      "id": "product-2",
+      "description": "A tube of Green Tea Detox Mask with a green tea leaf.",
+      "imageUrl": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80",
+      "imageHint": "skincare product"
+    },
+    {
+      "id": "product-3",
+      "description": "A jar of Charcoal Exfoliating Scrub with a charcoal swatch.",
+      "imageUrl": "https://images.unsplash.com/photo-1581073284793-6e3c13458380?w=600&q=80",
+      "imageHint": "skincare product"
+    },
+    {
+      "id": "product-4",
+      "description": "A bottle of Vitamin C Brightening Mask with citrus slices.",
+      "imageUrl": "https://images.unsplash.com/photo-1600378416893-2713f884a29a?w=600&q=80",
+      "imageHint": "skincare product"
+    },
+    {
+      "id": "product-5",
+      "description": "A calming jar of Soothing Lavender Sleep Mask with lavender sprigs.",
+      "imageUrl": "https://images.unsplash.com/photo-1596223592233-1491d953934d?w=600&q=80",
+      "imageHint": "skincare product"
+    },
+    {
+      "id": "product-6",
+      "description": "A luxurious container of 24K Gold Anti-Aging Mask with gold flakes.",
+      "imageUrl": "https://images.unsplash.com/photo-1619451428351-62d441443a42?w=600&q=80",
+      "imageHint": "skincare product"
+    },
+    {
+      "id": "contact-hero",
+      "description": "A minimalist desk setup with a laptop and a plant, suggesting a contact or work environment.",
+      "imageUrl": "https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=1000&h=400&fit=crop",
+      "imageHint": "minimalist desk"
+    }
+  ]
+}

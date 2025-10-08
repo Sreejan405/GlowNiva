@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+}
+
+
+@layer base {
+  :root {
+    --background: 30 33% 96%; /* #fdf6f0 */
+    --foreground: 26 38% 39%; /* #8b5e3c */
+
+    --card: 0 0% 100%; /* #ffffff */
+    --card-foreground: 231 15% 28%; /* #3d405b */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 231 15% 28%;
+
+    --primary: 13 72% 62%; /* #e07a5f */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 26 38% 39%; /* #8b5e3c */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 33 33% 93%; /* #f0e5da */
+    --muted-foreground: 26 38% 39%;
+
+    --accent: 13 72% 62%; /* #e07a5f */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 33 33% 93%; /* #f0e5da */
+    --input: 33 33% 93%;
+    --ring: 13 72% 62%;
+    
+    --chart-1: 13 72% 62%;
+    --chart-2: 26 38% 39%;
+    --chart-3: 231 15% 28%;
+    --chart-4: 240 5% 96%;
+    --chart-5: 225 8% 73%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 26 38% 10%; /* A darker shade for dark mode */
+    --foreground: 30 33% 96%;
+
+    --card: 26 38% 15%;
+    --card-foreground: 30 33% 96%;
+
+    --popover: 26 38% 15%;
+    --popover-foreground: 30 33% 96%;
+
+    --primary: 13 72% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 33 33% 80%;
+    --secondary-foreground: 26 38% 10%;
+
+    --muted: 26 38% 20%;
+    --muted-foreground: 33 33% 85%;
+    
+    --accent: 13 72% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 26 38% 25%;
+    --input: 26 38% 25%;
+    --ring: 13 72% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: linear-gradient(to bottom right, hsl(30, 33%, 96%), hsl(32, 50%, 97%), hsl(36, 100%, 99%));
+  }
+}
+
+.btn-primary-gradient {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+}
+
+.btn-primary-gradient:hover {
+    filter: brightness(1.1);
+}
