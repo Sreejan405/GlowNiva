@@ -37,7 +37,13 @@ export default function ContactPage() {
 
   return (
     <section className="px-8 md:px-16 py-16 bg-gradient-to-t from-[#fffdfb] via-[#fdf6f0] to-[#f0e5da] min-h-[80vh]">
-      <h1 className="text-3xl font-bold text-center mb-8 text-card-foreground">Get in Touch</h1>
+      <h1 className="text-3xl font-bold text-center mb-4 text-card-foreground">Get in Touch</h1>
+      <p className="text-center text-muted-foreground mb-8">
+        Have questions? Email us at{' '}
+        <a href="mailto:glowniva@gmail.com" className="text-primary hover:underline">
+          glowniva@gmail.com
+        </a>
+      </p>
       <form onSubmit={form.handleSubmit(onSubmit)} className="max-w-xl mx-auto space-y-6">
         <Input 
           {...form.register("name")} 
