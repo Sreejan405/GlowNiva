@@ -49,6 +49,12 @@
       "imageHint": "skincare product"
     },
     {
+      "id": "product-generic",
+      "description": "A generic skincare product bottle.",
+      "imageUrl": "https://picsum.photos/seed/skincare/600/600",
+      "imageHint": "skincare bottle"
+    },
+    {
       "id": "contact-hero",
       "description": "A minimalist desk setup with a laptop and a plant, suggesting a contact or work environment.",
       "imageUrl": "https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=1000&h=400&fit=crop",
