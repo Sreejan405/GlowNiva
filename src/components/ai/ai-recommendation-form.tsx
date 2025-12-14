@@ -1,6 +1,6 @@
 'use client';
 
-import { useActionState, useState } from 'react';
+import { useActionState, useState, startTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -49,7 +49,9 @@ export default function AiRecommendationForm() {
     const formData = new FormData();
     formData.append('skinType', data.skinType);
     formData.append('preferences', data.preferences);
-    formAction(formData);
+        startTransition(() => {
+            formAction(formData);
+        });
   };
 
 
