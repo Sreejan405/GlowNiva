@@ -23,19 +23,19 @@
     {
       "id": "product-4",
       "description": "A bottle of Vitamin C Brightening Mask with citrus slices.",
-      "imageUrl": "https://images.unsplash.com/photo-1600378416893-2713f884a29a?w=600&q=80",
+      "imageUrl": "https://picsum.photos/seed/vitamin-c/600/600",
       "imageHint": "skincare product"
     },
     {
       "id": "product-5",
       "description": "A calming jar of Soothing Lavender Sleep Mask with lavender sprigs.",
-      "imageUrl": "https://images.unsplash.com/photo-1596223592233-1491d953934d?w=600&q=80",
+      "imageUrl": "https://picsum.photos/seed/lavender/600/600",
       "imageHint": "skincare product"
     },
     {
       "id": "product-6",
       "description": "A luxurious container of 24K Gold Anti-Aging Mask with gold flakes.",
-      "imageUrl": "https://images.unsplash.com/photo-1619451428351-62d441443a42?w=600&q=80",
+      "imageUrl": "https://picsum.photos/seed/gold/600/600",
       "imageHint": "skincare product"
     },
     {
